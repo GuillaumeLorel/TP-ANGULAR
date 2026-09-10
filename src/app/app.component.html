@@ -1,32 +1,19 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 <style></style>
 
 <div
-  class="content d-flex flex-column justify-content-center align-content-center text-center align-items-center"
+  class="content d-flex flex-column justify-content-center align-content-center text-center align-items-center gap-2"
   role="main"
   style="min-height: 100vh; width: auto"
 >
   <h1 class="text-dark">Module Champ d'applications</h1>
-  <h2 class="text-success">Séance TP1</h2>
-  <span class="bg-info text-center"
-    >Angular Prise en main d'Angular, première application
-  </span>
-</div>
+  <h2 class="text-success">{{ nomSeance }}</h2>
+  <span class="bg-info text-dark text-center">{{ resumeSeance }}</span>
 
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+  <app-etudiant nom="Lorel" prenom="Guillaume" statut="absent"></app-etudiant>
+
+  <button [disabled]="!isAuth" (click)="rendTousPres()" class="btn btn-success">
+    Tous présents
+  </button>
+</div>
 
 <router-outlet />
