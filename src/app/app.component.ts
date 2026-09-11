@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { EtudiantComponent } from './etudiant/etudiant.component';
 
@@ -6,6 +6,7 @@ import { EtudiantComponent } from './etudiant/etudiant.component';
   selector: 'app-root',
   imports: [RouterOutlet, EtudiantComponent],
   templateUrl: './app.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
@@ -16,6 +17,8 @@ export class AppComponent {
 
   isAuth: boolean = false;
 
+  statutEtudiants = signal<string>('absent');
+
   constructor() {
     setTimeout(() => {
       this.isAuth = true;
@@ -23,6 +26,7 @@ export class AppComponent {
   }
 
   rendTousPres() {
-    console.log('Test : le bouton "Tous présents" a été cliqué');
+    this.statutEtudiants.set('présent');
+    console.log('Tous les étudiants sont maintenant présents');
   }
 }

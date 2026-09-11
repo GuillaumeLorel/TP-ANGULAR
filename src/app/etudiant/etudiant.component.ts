@@ -1,13 +1,14 @@
-import { Component, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input } from '@angular/core';
 
 @Component({
   selector: 'app-etudiant',
   imports: [],
   templateUrl: './etudiant.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './etudiant.component.scss',
 })
 export class EtudiantComponent {
-  @Input() nom: string = '';
-  @Input() prenom: string = '';
-  @Input() statut: string = 'absent';
+  nom = input<string>('');
+  prenom = input<string>('');
+  statut = input<string>('absent');
 }
