@@ -1,0 +1,54 @@
+<!-- 3.3 - ngClass : style par défaut + variante selon la présence -->
+<li
+  class="list-group-item text-start"
+  [ngClass]="{
+    'list-group-item-success': statut(),
+    'list-group-item-danger': !statut()
+  }"
+>
+  <div class="d-flex align-items-center justify-content-between gap-3">
+    <!-- 3.2 - ngStyle sur la balise h4 -->
+    <h4 class="mb-0" [ngStyle]="{ color: getColorEtu() }">
+      {{ prenom() }} {{ nom() }}
+    </h4>
+
+    <!-- 2.2 - carré rouge uniquement si l'étudiant est absent -->
+    <span *ngIf="!statut()" class="carre-absent" title="Absent"></span>
+  </div>
+
+  <!-- 2.1 - affichage du statut -->
+  <p class="mb-2">Statut : {{ statut() ? 'présent' : 'absent' }}</p>
+
+  <!-- 3.5 / 3.6 / 3.7 - boutons de changement de statut, désactivés selon l'état -->
+  <div class="d-flex gap-2 mb-2">
+    <button
+      type="button"
+      class="btn btn-sm btn-success"
+      [disabled]="statut()"
+      (click)="rendPresent()"
+    >
+      Présent
+    </button>
+    <button
+      type="button"
+      class="btn btn-sm btn-danger"
+      [disabled]="!statut() || absentBloque()"
+      (click)="rendAbsent()"
+    >
+      Absent
+    </button>
+  </div>
+
+  <!-- 4.2 - pipe date -->
+  <p *ngIf="derniereModif()" class="mb-1 small text-muted">
+    Dernière modification : {{ derniereModif() | date: 'dd/MM/yyyy HH:mm:ss' }}
+  </p>
+
+  <!-- 4.3 - compteur d'absences -->
+  <p class="mb-1 small text-muted">Absences comptées : {{ nbAbsences() }}</p>
+
+  <!-- 1.4 - commentaire de séance remonté depuis le parent -->
+  <p *ngIf="commentaire()" class="mb-0 small fst-italic">
+    Commentaire : {{ commentaire() }}
+  </p>
+</li>
