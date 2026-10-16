@@ -15,7 +15,6 @@ export class Home {
   btnText: string = 'Envoyer';
   objectifText: string = '';
 
-  // Le service est public pour que le template accède directement au tableau partagé
   constructor(
     private monRouteur: Router,
     public activiteService: ActiviteService,
@@ -28,7 +27,6 @@ export class Home {
   ajoutItem(): void {
     this.activiteService.objectifs.push(this.objectifText);
 
-    // Redirection vers la page about 1 seconde après l'ajout d'un item
     setTimeout(() => {
       this.monRouteur.navigate(['about']);
     }, 1000);
