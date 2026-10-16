@@ -1,0 +1,22 @@
+.actions {
+  display: flex;
+}
+
+.btn {
+  border: 0;
+  padding: 0.6em 1.2em;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-supprimer {
+  background: #d9534f;
+}
+
+.btn-modifier {
+  background: #337ab7;
+}
+
+.btn-retour {
+  background: #5cb85c;
+}

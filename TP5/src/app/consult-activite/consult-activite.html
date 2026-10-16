@@ -1,0 +1,28 @@
+<!-- LOREL Guillaume -->
+
+<h3>Détail de l'activité :</h3>
+@if (activite !== undefined) {
+  <ol>
+    <li>
+      Nom de l'activité :
+      @if (enEdition) {
+        <input type="text" name="titre" [(ngModel)]="titreEdition" />
+      } @else {
+        <strong>{{ activite }}</strong>
+      }
+    </li>
+  </ol>
+
+  <div class="actions">
+    <button class="btn btn-supprimer" (click)="supprimeElem(id)">Supprimer</button>
+    @if (enEdition) {
+      <button class="btn btn-modifier" (click)="sauvegarderElem(id)">Sauvegarder</button>
+    } @else {
+      <button class="btn btn-modifier" (click)="modifierElem()">Modifier</button>
+      <button class="btn btn-retour" (click)="retour()">Retour</button>
+    }
+  </div>
+} @else {
+  <p>Aucune activité ne correspond à l'indice {{ id }}.</p>
+  <button class="btn btn-retour" (click)="retour()">Retour</button>
+}

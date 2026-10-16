@@ -6,6 +6,7 @@ Travaux pratiques du module Champ d'Application (Angular), Université Lyon 2.
 | --- | --- |
 | [TP1-2](TP1-2/) | Composants, liaisons de données, directives et pipes |
 | [TP3-4](TP3-4/) | Animations, routing et transmission de paramètres |
+| [TP5](TP5/) | Services (ActiviteService), détail / suppression / édition d'une activité, déploiement GitHub Pages |
 
 Chaque dossier est un projet Angular indépendant :
 

@@ -1,0 +1,10 @@
+<!-- LOREL Guillaume -->
+
+<p>about works!</p>
+<ol>
+  @for (objectif of activiteService.objectifs; track $index) {
+    <li (click)="consulterActivite($index)">{{ objectif }}</li>
+  } @empty {
+    <p>Aucun objectif pour le moment.</p>
+  }
+</ol>
