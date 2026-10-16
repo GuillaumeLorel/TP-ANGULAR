@@ -1,4 +1,10 @@
-# ModuleAngularTP3
+# TP5 : Services et déploiement
+
+> 📄 **[Rapport d'avancement (PDF)](Rapport_TP5_LOREL_Guillaume.pdf)**
+>
+> 🌐 **[Application déployée sur GitHub Pages](https://guillaumelorel.github.io/TP-ANGULAR/)**
+
+---
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.8.
 
